@@ -12,14 +12,16 @@ function LeftNews({ news, categories }) {
     // console.log(image_url, title, category_id, published_date)
 
     const category = categories.find(category => category.id === category_id);
-    console.log(category.name)
+    const category_name = category?.name;
+    // console.log(category_name);
+
     return (
         <div className="text-sm mb-5 space-y-1">
             <img src={image_url} alt={title} />
             <h3>{title.slice(0, 52)}...</h3>
             <div className='lg:flex justify-between'>
 
-                <p>{category.name}</p>
+                <p>{category_name}</p>
                 <div className="flex items-center gap-1">
                     <span><MdDateRange></MdDateRange></span>
                     <p>{published_date.slice(0, 10)}</p>
